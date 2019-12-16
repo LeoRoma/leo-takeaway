@@ -133,7 +133,7 @@ var menu = {
             "price": 2.50
         }
     ],
-    "alcoholic": [
+    "alcoholics": [
         {
             "name": "Peroni",
             "price": 3.50
@@ -154,13 +154,22 @@ var pizzas = menu.pizzas;
 var sides = menu.sides;
 var desserts = menu.desserts;
 var drinks = menu.drinks;
-var alcoholic = menu.alcoholic;
+var alcoholics = menu.alcoholics;
 
 $(document).ready(function () {
     var $showStarters = $('#showStarters');
     var $showPizzas = $('#showPizzas');
+    var $showSides = $('#showSides');
+    var $showDesserts = $('#showDesserts');
+    var $showDrinks = $('#showDrinks');
+    var $showAlcoholics = $('#showAlcoholics');
+
     var startersTemplate = $('#startersTemplate').html();
     var pizzasTemplate = $('#pizzasTemplate').html();
+    var sidesTemplate = $('#sidesTemplate').html();
+    var dessertsTemplate = $('#dessertsTemplate').html();
+    var drinksTemplate = $('#drinksTemplate').html();
+    var alcoholicsTemplate = $('#alcoholicsTemplate').html();
 
     function getStarters(starter) {
         $showStarters.append(Mustache.render(startersTemplate, starter))
@@ -170,13 +179,45 @@ $(document).ready(function () {
         $showPizzas.append(Mustache.render(pizzasTemplate, pizza))
     };
 
+    function getSides(side) {
+        $showSides.append(Mustache.render(sidesTemplate, side))
+    };
+
+    function getDesserts(dessert) {
+        $showDesserts.append(Mustache.render(dessertsTemplate, dessert))
+    };
+
+    function getDrinks(drink) {
+        $showDrinks.append(Mustache.render(drinksTemplate, drink))
+    };
+
+    function getAlcoholics(alcoholic) {
+        $showAlcoholics.append(Mustache.render(alcoholicsTemplate, alcoholic))
+    };
+
     $.each(starters, function (i, starter) {
         getStarters(starter);
     })
 
     $.each(pizzas, function (i, pizza) {
         getPizzas(pizza);
-        console.log(pizza.name);
+    })
+
+    $.each(sides, function (i, side) {
+        getSides(side);
+        console.log(side.name);
+    })
+
+    $.each(desserts, function (i, dessert) {
+        getDesserts(dessert);
+    })
+
+    $.each(drinks, function (i, drink) {
+        getDrinks(drink);
+    })
+
+    $.each(alcoholics, function (i, alcoholic) {
+        getAlcoholics(alcoholic);
     })
 })
 
