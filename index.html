@@ -102,8 +102,8 @@
                 <h3 class="categoryNAme"><a name="cat0"></a>Starters</h3>
                 <div class="products">
                   <div class="productWithSynonims">
-                    <div class="row information" id="showDish">
-                      <template id="foodsTemplate">
+                    <div class="row information" id="showStarters">
+                      <template id="startersTemplate">
                         <div class="col-8">
                           <h4 class="name" id="dish">{{name}} </h4>
                         </div>
@@ -119,13 +119,15 @@
                 <h3 class="categoryNAme">Pizzas</h3>
                 <div class="products">
                   <div class="productWithSynonims">
-                    <div class="row information">
-                      <div class="col-8">
-                        <h4 class="name">Arancini</h4>
-                      </div>
-                      <div class="col-4 orderDetails">
-                        <p class="price">£ 1.50 <button>+</button></p>
-                      </div>
+                    <div class="row information" id="showPizzas">
+                      <template id="pizzasTemplate">
+                        <div class="col-8">
+                          <h4 class="name" id="dish">{{name}} </h4>
+                        </div>
+                        <div class="col-4 orderDetails" id="showPrice">
+                          <p class="price">£ {{price}} <button>+</button></p>
+                        </div>
+                      </template>
                     </div>
                   </div>
                 </div>
@@ -133,15 +135,15 @@
               <div id="cat2" class="category">
                 <h3 class="categoryNAme">Sides</h3>
                 <div class="products">
-                  <div class="productWithSynonims">
-                    <div class="row information">
+                  <div class="row information" id="showPizzas">
+                    <template id="pizzasTemplate">
                       <div class="col-8">
-                        <h4 class="name">Arancini</h4>
+                        <h4 class="name" id="dish">{{name}} </h4>
                       </div>
-                      <div class="col-4 orderDetails">
-                        <p class="price">£ 1.50 <button>+</button></p>
+                      <div class="col-4 orderDetails" id="showPrice">
+                        <p class="price">£ {{price}} <button>+</button></p>
                       </div>
-                    </div>
+                    </template>
                   </div>
                 </div>
               </div>

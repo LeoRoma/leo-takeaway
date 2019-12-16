@@ -157,21 +157,26 @@ var drinks = menu.drinks;
 var alcoholic = menu.alcoholic;
 
 $(document).ready(function () {
-    var $showDish = $('#showDish');
-    var $showPrice = $('#showPrice');
-    var foodsTemplate = $('#foodsTemplate').html();
-    var pricesTemplate = $('#pricesTemplate').html();
+    var $showStarters = $('#showStarters');
+    var $showPizzas = $('#showPizzas');
+    var startersTemplate = $('#startersTemplate').html();
+    var pizzasTemplate = $('#pizzasTemplate').html();
 
-    function getStarter(starter) {
-        $showDish.append(Mustache.render(foodsTemplate, starter))
-    }
-    // function getStarter(starter) {
-    //     $showPrice.append(Mustache.render(pricesTemplate, starter))
-    // }
+    function getStarters(starter) {
+        $showStarters.append(Mustache.render(startersTemplate, starter))
+    };
+
+    function getPizzas(pizza) {
+        $showPizzas.append(Mustache.render(pizzasTemplate, pizza))
+    };
 
     $.each(starters, function (i, starter) {
-        getStarter(starter);
-        console.log(starter.name);
+        getStarters(starter);
+    })
+
+    $.each(pizzas, function (i, pizza) {
+        getPizzas(pizza);
+        console.log(pizza.name);
     })
 })
 
