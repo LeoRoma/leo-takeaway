@@ -15,7 +15,8 @@
   <link rel="stylesheet" type="text/css" href="./public/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.1.0/mustache.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="./menu.js"></script>
+  <script src="./src/menu.js"></script>
+  <script src="./src/takeaway.js" async></script>
 </head>
 
 <body>
@@ -105,10 +106,11 @@
                     <div class="row information" id="showStarters">
                       <template id="startersTemplate">
                         <div class="col-8">
-                          <h4 class="name" id="dish">{{name}} </h4>
+                          <span class="shop-item-title">{{name}}</span>
                         </div>
                         <div class="col-4 orderDetails" id="showPrice">
-                          <p class="price">£ {{price}} <button>+</button></p>
+                          <span class="shop-item-price">{{price}}</span>
+                          <button class="btn btn-primary shop-item-button" type="button">+</button>
                         </div>
                       </template>
                     </div>
@@ -122,10 +124,11 @@
                     <div class="row information" id="showPizzas">
                       <template id="pizzasTemplate">
                         <div class="col-8">
-                          <h4 class="name" id="dish">{{name}} </h4>
+                          <span class="shop-item-title">{{name}}</span>
                         </div>
                         <div class="col-4 orderDetails" id="showPrice">
-                          <p class="price">£ {{price}} <button>+</button></p>
+                          <span class="shop-item-price">{{price}}</span>
+                          <button class="btn btn-primary shop-item-button" type="button">+</button>
                         </div>
                       </template>
                     </div>
@@ -138,10 +141,11 @@
                   <div class="row information" id="showSides">
                     <template id="sidesTemplate">
                       <div class="col-8">
-                        <h4 class="name" id="dish">{{name}} </h4>
+                        <span class="shop-item-title">{{name}}</span>
                       </div>
                       <div class="col-4 orderDetails" id="showPrice">
-                        <p class="price">£ {{price}} <button>+</button></p>
+                        <span class="shop-item-price">{{price}}</span>
+                        <button class="btn btn-primary shop-item-button" type="button">+</button>
                       </div>
                     </template>
                   </div>
@@ -154,10 +158,11 @@
                     <div class="row information" id="showDesserts">
                       <template id="dessertsTemplate">
                         <div class="col-8">
-                          <h4 class="name" id="dish">{{name}} </h4>
+                          <span class="shop-item-title">{{name}}</span>
                         </div>
                         <div class="col-4 orderDetails" id="showPrice">
-                          <p class="price">£ {{price}} <button>+</button></p>
+                          <span class="shop-item-price">{{price}}</span>
+                          <button class="btn btn-primary shop-item-button" type="button">+</button>
                         </div>
                       </template>
                     </div>
@@ -171,10 +176,11 @@
                     <div class="row information" id="showDrinks">
                       <template id="drinksTemplate">
                         <div class="col-8">
-                          <h4 class="name" id="dish">{{name}} </h4>
+                          <span class="shop-item-title">{{name}}</span>
                         </div>
                         <div class="col-4 orderDetails" id="showPrice">
-                          <p class="price">£ {{price}} <button>+</button></p>
+                          <span class="shop-item-price">{{price}}</span>
+                          <button class="btn btn-primary shop-item-button" type="button">+</button>
                         </div>
                       </template>
                     </div>
@@ -188,10 +194,11 @@
                     <div class="row information" id="showAlcoholics">
                       <template id="alcoholicsTemplate">
                         <div class="col-8">
-                          <h4 class="name" id="dish">{{name}} </h4>
+                          <span class="shop-item-title">{{name}}</span>
                         </div>
                         <div class="col-4 orderDetails" id="showPrice">
-                          <p class="price">£ {{price}} <button>+</button></p>
+                          <span class="shop-item-price">{{price}}</span>
+                          <button class="btn btn-primary shop-item-button" type="button">+</button>
                         </div>
                       </template>
                     </div>

@@ -222,11 +222,3 @@ $(document).ready(function () {
 })
 
 
-
-
-
-// for (i; i < starters.length; i++) {
-//     console.log(starters[i].name)
-// }
-
-
