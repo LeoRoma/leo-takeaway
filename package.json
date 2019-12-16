@@ -1,0 +1,24 @@
+{
+  "name": "leo-takeaway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "menu.js",
+  "dependencies": {
+    "requirejs": "^2.3.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeoRoma/leo-takeaway.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeoRoma/leo-takeaway/issues"
+  },
+  "homepage": "https://github.com/LeoRoma/leo-takeaway#readme",
+  "keywords": []
+}
