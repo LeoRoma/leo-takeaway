@@ -283,5 +283,12 @@ $(document).ready(function () {
             updateQuantity(dish)
         }
     });
+
+    // purchase 
+    $('.purchase').click(function () {
+        if (total === 0) {
+            alert('You can not checkout without purchasing an item.')
+        }
+    })
 })
 
