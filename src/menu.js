@@ -231,42 +231,43 @@ $(document).ready(function () {
     }
     var total = 0;
     $('.addFood').click(function (i) {
-        
         var dish = $(this).data(name[i]);
         var dishName = dish.name;
         var dishPrice = dish.price
-        console.log(typeof dishPrice)
         foodItems.forEach(food => {
-            if(food === dishName){
+            if (food === dishName) {
                 alert("Item already added!")
                 foodCart(this).closest("li").remove();
                 return
             }
         })
-        
         foodItems.push(dish.name)
         addFood(dish)
         total = total + dishPrice;
-        
         updateQuantity(dish)
     });
 
-    
 
-    function updateQuantity(dish){
+
+    function updateQuantity(dish) {
         var quantity = 0;
         quantity += 1;
         total = Math.round(total * 100) / 100
-        $('.basketQty').text(`${quantity}`);
+
         // $('.cart-total-price').append(`${total}`);
         console.log(quantity)
         console.log(total)
+        $('.basketQty').text(`${quantity}`);
         $('.cart-total-price').text(`${total}`);
     }
 
     // remove item 
-    $foodCart.delegate('.removeFood', 'click', function () {
+    $foodCart.delegate('.removeFood', 'click', function (i) {
+        var dish = $(this).data(name[i]);
+        var dishPrice = dish.price
+        total -= dishPrice;
         $(this).closest("li").remove();
+        updateQuantity(dish)
     });
 })
 
