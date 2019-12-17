@@ -237,17 +237,17 @@
                 <template id="cartTemplate">
                   <li class="basket">
                     <span class="basketName">{{name}}</span>
-                    <span class="basketPrice">£{{price}}</span>
-                    <span class="basketQty"></span>
+                    <span class="basketPrice" id="quantity">£{{price}}</span>
                     <button class="btn btn-danger removeFood" type="button" data-name='{{name}}' data-price='{{price}}'
-                      type="button">-</button>
-                    <button class="btn btn-primary addFood" type="button" data-name='{{name}}'
-                      data-price='{{price}}'>+</button>
+                      value="1" type="button">-</button>
+                    <button class="btn btn-primary addFood" type="button" data-name='{{name}}' data-price='{{price}}'
+                      value="1" type="button">+</button>
                   </li>
                 </template>
               </ul>
               <div class="row cart-total">
                 <strong class="col-8 cart-total-title">Total</strong>
+                <span class="basketQty"></span>
                 <span class="col-4 cart-total-price">£</span>
               </div>
               <button class="btn btn-primary purchase" type="button">PURCHASE</button>
