@@ -9,3 +9,14 @@ ul {
 h3 {
   color: blue;
 }
+
+.basketName {
+  display: flex;
+  align-items: flex-start;
+}
+
+.basketPrice {
+  /* float: center; */
+  display: flex;
+  align-items: center;
+}

@@ -218,79 +218,62 @@
                           <button class="btn btn-primary addFood" type="button" data-name='{{name}}'
                             data-price='{{price}}'>+</button>
                         </div>
+                      </template>
                     </div>
-                    </template>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <!-- //MENU  -->
         </div>
-        <!-- //MENU  -->
-      </div>
-      <!-- //RESTAURANT PARTS  -->
+        <!-- //RESTAURANT PARTS  -->
 
-      <!-- BASKET  -->
-      <div id="basket" class="col-sm">
-        <div class="card sticky-top">
-          <section class="container content-section">
-            <h2 class="section-header">Cart</h2>
-            <div class="row">
-              <div class="col-3">
-                <h3>Item</h3>
+        <!-- BASKET  -->
+        <div id="basket" class="col-sm">
+          <div class="card sticky-top">
+            <section class="container content-section">
+              <h2 class="section-header">Cart</h2>
+              <ul id="foodCart">
+                <template id="cartTemplate">
+                  <li class="basket">
+                    <span class="basketName">{{name}}</span>
+                    <span class="basketPrice">£{{price}}</span>
+                    <span class="basketQty"></span>
+                    <button class="btn btn-danger removeFood" type="button">-</button>
+                  </li>
+                </template>
+              </ul>
+              <div class="row cart-total">
+                <strong class="col-8 cart-total-title">Total</strong>
+                <span class="col-4 cart-total-price">£0</span>
               </div>
-              <div class="col-3">
-                <h3>Price</h3>
-              </div>
-              <div class="col-3">
-                <h3>Quantity</h3>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-3">
-                <span>pizza</span>
-              </div>
-              <div class="col-3">
-                <span>$12</span>
-              </div>
-              <div class="col-3">
-                <span>3</span><button class="btn btn-danger" type="button">REMOVE</button>
-              </div>
-            </div>
-            <!-- <span class="col-8 cart-item cart-header cart-column">ITEM</span>
-                <div class="cart-item cart-column">
-                  <span class="cart-item-title">hello</span>
-                </div>
-                <span class="col-4 cart-price cart-header cart-column">PRICE</span>
-                <span class="cart-price cart-column">$12</span>
-                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
-                <input class="cart-quantity-input" type="number" value="1">
-                <button class="btn btn-danger" type="button">REMOVE</button> -->
-            <div class="cart-items">
-            </div>
-            <div class="row cart-total">
-              <strong class="col-8 cart-total-title">Total</strong>
-              <span class="col-4 cart-total-price">£0</span>
-            </div>
-            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
-          </section>
+              <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+            </section>
+          </div>
         </div>
+        <!-- //BASKET  -->
       </div>
-      <!-- //BASKET  -->
     </div>
-  </div>
-  <!-- //RESTAURANT  -->
+    <!-- //RESTAURANT  -->
 
-  <!-- FOOTER  -->
-  <footer class="text-center">
-    <a href="#home" class="w3-button w3-black">To the top</a>
-    <div class="w3-xlarge w3-section">
-      <a href="https://github.com/LeoRoma"> <i class="fa fa-github w3-hover-opacity"></i></a>
-      <a href="https://www.linkedin.com/in/jiatian-leo-xia-9b2490191/"> <i
-          class="fa fa-linkedin w3-hover-opacity"></i></a>
-    </div>
-  </footer>
-  <!-- //FOOTER -->
+    <!-- FOOTER  -->
+    <footer class="text-center">
+      <a href="#home" class="w3-button w3-black">To the top</a>
+      <div class="w3-xlarge w3-section">
+        <a href="https://github.com/LeoRoma"> <i class="fa fa-github w3-hover-opacity"></i></a>
+        <a href="https://www.linkedin.com/in/jiatian-leo-xia-9b2490191/"> <i
+            class="fa fa-linkedin w3-hover-opacity"></i></a>
+      </div>
+    </footer>
+    <!-- //FOOTER -->
+
+    <ul>
+        <li>item one <div class='deleteMe'>X</div></li>
+        <li>item two <div class='deleteMe'>X</div></li>
+        <li>item three <button class="btn btn-danger removeFood" type="button">-</button></li>
+        ....
+    </ul>
 </body>
 
 </html>
