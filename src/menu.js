@@ -258,15 +258,11 @@ $(document).ready(function () {
         console.log(dishPrice)
         total += dishPrice;
         quantityByItem += 1;
-        // $(this).closest("li").text(`${price}`);
         updateQuantity(dish);
     });
 
     function updateQuantity(dish) {
-        
         total = Math.round(total * 100) / 100
-        console.log(quantity)
-        console.log(total)
         $('.basketQty').text(`${quantityByItem}`);
         $('.cart-total-price').text(`£${total}`);
     }
@@ -275,22 +271,17 @@ $(document).ready(function () {
     $foodCart.delegate('.removeFood', 'click', function (i) {
         var dish = $(this).data(name[i]);
         var dishPrice = dish.price
-        // for (quantityByItem; quantityByItem > 0; quantityByItem--) {
-            if (quantityByItem > 0) {
-                quantityByItem -= 1;
-                total -= dishPrice;
-            }
-            // $(this).closest("li").remove();
+        var dishName = dish.name
+        if (quantityByItem > 0) {
+            quantityByItem -= 1;
+            total -= dishPrice;
             updateQuantity(dish);
-            if (quantityByItem === 0) {
-                $(this).closest("li").remove();
-
-                updateQuantity(dish)
-
-
-            }
-        // }
-
+        }
+        if (quantityByItem === 0) {
+            $(this).closest("li").remove();
+            foodItems.pop()
+            updateQuantity(dish)
+        }
     });
 })
 
