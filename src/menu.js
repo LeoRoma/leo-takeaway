@@ -148,7 +148,7 @@ var menu = {
         }
     ]
 }
-console.log(menu.starters[0].name);
+
 var starters = menu.starters;
 var pizzas = menu.pizzas;
 var sides = menu.sides;
@@ -205,7 +205,6 @@ $(document).ready(function () {
 
     $.each(sides, function (i, side) {
         getSides(side);
-        console.log(side.name);
     })
 
     $.each(desserts, function (i, dessert) {
@@ -219,6 +218,44 @@ $(document).ready(function () {
     $.each(alcoholics, function (i, alcoholic) {
         getAlcoholics(alcoholic);
     })
-})
 
+    // adding item 
+
+
+    // var $foodData = $('.addFood').each(function (i) {
+    //     var dish = $(this).data(name[i])
+    //     console.log(dish)
+    //     var dishName = dish.name;
+    //     var dishPrice = dish.price;
+    //     // console.log(dishName.length)
+    //     var $addFood = $('.addFood').click(function () {
+    //         var index = $(this).data('index');
+    //         console.log(index)
+    //         //     $('.cart-items').append(`<div class="cart-item cart-column">
+    //         //     <span class="cart-item-title">${dishName}</span>
+    //         // </div>
+    //         // <span class="cart-price cart-column">${dishPrice}</span>
+    //         // <div class="cart-quantity cart-column">
+    //         //     <input class="cart-quantity-input" type="number" value="1">
+    //         //     <button class="btn btn-danger" type="button">REMOVE</button>
+    //         // </div>`);
+    //     })
+    // })
+    $('.addFood').click(function (i) {
+        var dish = $(this).data(name[i])
+        var dishName = dish.name;
+        var dishPrice = dish.price;
+        $('.cart-items').append(
+            `<div class="cart-item cart-column">
+                <span class="cart-item-title">${dishName}</span>
+            </div> 
+                <span class="cart-price cart-column">${dishPrice}</span>
+            <div class="cart-quantity cart-column">
+                <input class="cart-quantity-input" type="number" value="1">
+                <button class="btn btn-danger" type="button">REMOVE</button>
+            </div>`
+     );
+    })
+
+})
 

@@ -106,11 +106,11 @@
                     <div class="row information" id="showStarters">
                       <template id="startersTemplate">
                         <div class="col-8">
-                          <span class="shop-item-title">{{name}}</span>
+                          <span class="shop-item-title">{{name}}{{i}}</span>
                         </div>
                         <div class="col-4 orderDetails" id="showPrice">
                           <span class="shop-item-price">{{price}}</span>
-                          <button class="btn btn-primary shop-item-button" type="button">+</button>
+                          <button class="btn btn-primary addFood" type="button">+</button>
                         </div>
                       </template>
                     </div>
@@ -128,7 +128,7 @@
                         </div>
                         <div class="col-4 orderDetails" id="showPrice">
                           <span class="shop-item-price">{{price}}</span>
-                          <button class="btn btn-primary shop-item-button" type="button">+</button>
+                          <button class="btn btn-primary addFood" type="button">+</button>
                         </div>
                       </template>
                     </div>
@@ -145,7 +145,7 @@
                       </div>
                       <div class="col-4 orderDetails" id="showPrice">
                         <span class="shop-item-price">{{price}}</span>
-                        <button class="btn btn-primary shop-item-button" type="button">+</button>
+                        <button class="btn btn-primary addFood" type="button">+</button>
                       </div>
                     </template>
                   </div>
@@ -162,7 +162,7 @@
                         </div>
                         <div class="col-4 orderDetails" id="showPrice">
                           <span class="shop-item-price">{{price}}</span>
-                          <button class="btn btn-primary shop-item-button" type="button">+</button>
+                          <button class="btn btn-primary addFood" type="button">+</button>
                         </div>
                       </template>
                     </div>
@@ -180,7 +180,7 @@
                         </div>
                         <div class="col-4 orderDetails" id="showPrice">
                           <span class="shop-item-price">{{price}}</span>
-                          <button class="btn btn-primary shop-item-button" type="button">+</button>
+                          <button class="btn btn-primary addFood" type="button">+</button>
                         </div>
                       </template>
                     </div>
@@ -198,7 +198,7 @@
                         </div>
                         <div class="col-4 orderDetails" id="showPrice">
                           <span class="shop-item-price">{{price}}</span>
-                          <button class="btn btn-primary shop-item-button" type="button">+</button>
+                          <button class="btn btn-primary addFood" type="button" data-name='{{name}}' data-price='{{price}}'>+</button>
                         </div>
                       </template>
                     </div>
@@ -246,13 +246,7 @@
       </div>
     </footer>
     <!-- //FOOTER -->
-    <ul id="showDish"></ul>
-    <template id="foodsTemplate">
-      <li>
-        <h4 class="name" id="dish">{{name}} </h4>
-      </li>
-
-    </template>
+    <button id='btn' data-shop-listing='{"name": "Buoy", "description": "A buoy", "price": 5.50}'>Add to cart</button>
 </body>
 
 </html>
