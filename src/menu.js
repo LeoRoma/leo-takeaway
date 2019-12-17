@@ -225,11 +225,14 @@ $(document).ready(function () {
 
     // adding item 
     var foodItems = [];
+    var quantity = 0;
+    var quantityByItem = 0
+    var total = 0;
 
     function addFood(dish) {
         $foodCart.append(Mustache.render(cartTemplate, dish));
     }
-    var total = 0;
+
     $('.addFood').click(function (i) {
         var dish = $(this).data(name[i]);
         var dishName = dish.name;
@@ -243,31 +246,51 @@ $(document).ready(function () {
         })
         foodItems.push(dish.name)
         addFood(dish)
-        total = total + dishPrice;
+        quantityByItem += 1;
+        total += dishPrice;
         updateQuantity(dish)
     });
 
-
+    $foodCart.delegate('.addFood', 'click', function (i) {
+        console.log("hello")
+        var dish = $(this).data(name[i]);
+        var dishPrice = dish.price
+        console.log(dishPrice)
+        total += dishPrice;
+        quantityByItem += 1;
+        // $(this).closest("li").text(`${price}`);
+        updateQuantity(dish);
+    });
 
     function updateQuantity(dish) {
-        var quantity = 0;
-        quantity += 1;
+        
         total = Math.round(total * 100) / 100
-
-        // $('.cart-total-price').append(`${total}`);
         console.log(quantity)
         console.log(total)
-        $('.basketQty').text(`${quantity}`);
-        $('.cart-total-price').text(`${total}`);
+        $('.basketQty').text(`${quantityByItem}`);
+        $('.cart-total-price').text(`£${total}`);
     }
 
     // remove item 
     $foodCart.delegate('.removeFood', 'click', function (i) {
         var dish = $(this).data(name[i]);
         var dishPrice = dish.price
-        total -= dishPrice;
-        $(this).closest("li").remove();
-        updateQuantity(dish)
+        // for (quantityByItem; quantityByItem > 0; quantityByItem--) {
+            if (quantityByItem > 0) {
+                quantityByItem -= 1;
+                total -= dishPrice;
+            }
+            // $(this).closest("li").remove();
+            updateQuantity(dish);
+            if (quantityByItem === 0) {
+                $(this).closest("li").remove();
+
+                updateQuantity(dish)
+
+
+            }
+        // }
+
     });
 })
 
