@@ -105,12 +105,15 @@
                   <div class="productWithSynonims">
                     <div class="row information" id="showStarters">
                       <template id="startersTemplate">
-                        <div class="col-8">
+                        <div class="col-7">
                           <span class="shop-item-title">{{name}}{{i}}</span>
                         </div>
                         <div class="col-4 orderDetails" id="showPrice">
                           <span class="shop-item-price">{{price}}</span>
-                          <button class="btn btn-primary addFood" type="button">+</button>
+                        </div>
+                        <div class="col-1">
+                          <button class="btn btn-primary addFood" type="button" data-name='{{name}}'
+                            data-price='{{price}}'>+</button>
                         </div>
                       </template>
                     </div>
@@ -123,12 +126,15 @@
                   <div class="productWithSynonims">
                     <div class="row information" id="showPizzas">
                       <template id="pizzasTemplate">
-                        <div class="col-8">
+                        <div class="col-7">
                           <span class="shop-item-title">{{name}}</span>
                         </div>
                         <div class="col-4 orderDetails" id="showPrice">
                           <span class="shop-item-price">{{price}}</span>
-                          <button class="btn btn-primary addFood" type="button">+</button>
+                        </div>
+                        <div class="col-1">
+                          <button class="btn btn-primary addFood" type="button" data-name='{{name}}'
+                            data-price='{{price}}'>+</button>
                         </div>
                       </template>
                     </div>
@@ -140,12 +146,15 @@
                 <div class="products">
                   <div class="row information" id="showSides">
                     <template id="sidesTemplate">
-                      <div class="col-8">
+                      <div class="col-7">
                         <span class="shop-item-title">{{name}}</span>
                       </div>
                       <div class="col-4 orderDetails" id="showPrice">
                         <span class="shop-item-price">{{price}}</span>
-                        <button class="btn btn-primary addFood" type="button">+</button>
+                      </div>
+                      <div class="col-1">
+                        <button class="btn btn-primary addFood" type="button" data-name='{{name}}'
+                          data-price='{{price}}'>+</button>
                       </div>
                     </template>
                   </div>
@@ -157,12 +166,15 @@
                   <div class="productWithSynonims">
                     <div class="row information" id="showDesserts">
                       <template id="dessertsTemplate">
-                        <div class="col-8">
+                        <div class="col-7">
                           <span class="shop-item-title">{{name}}</span>
                         </div>
                         <div class="col-4 orderDetails" id="showPrice">
                           <span class="shop-item-price">{{price}}</span>
-                          <button class="btn btn-primary addFood" type="button">+</button>
+                        </div>
+                        <div class="col-1">
+                          <button class="btn btn-primary addFood" type="button" data-name='{{name}}'
+                            data-price='{{price}}'>+</button>
                         </div>
                       </template>
                     </div>
@@ -175,12 +187,15 @@
                   <div class="productWithSynonims">
                     <div class="row information" id="showDrinks">
                       <template id="drinksTemplate">
-                        <div class="col-8">
+                        <div class="col-7">
                           <span class="shop-item-title">{{name}}</span>
                         </div>
                         <div class="col-4 orderDetails" id="showPrice">
                           <span class="shop-item-price">{{price}}</span>
-                          <button class="btn btn-primary addFood" type="button">+</button>
+                        </div>
+                        <div class="col-1">
+                          <button class="btn btn-primary addFood" type="button" data-name='{{name}}'
+                            data-price='{{price}}'>+</button>
                         </div>
                       </template>
                     </div>
@@ -193,60 +208,89 @@
                   <div class="productWithSynonims">
                     <div class="row information" id="showAlcoholics">
                       <template id="alcoholicsTemplate">
-                        <div class="col-8">
+                        <div class="col-7">
                           <span class="shop-item-title">{{name}}</span>
                         </div>
                         <div class="col-4 orderDetails" id="showPrice">
                           <span class="shop-item-price">{{price}}</span>
-                          <button class="btn btn-primary addFood" type="button" data-name='{{name}}' data-price='{{price}}'>+</button>
                         </div>
-                      </template>
+                        <div class="col-1">
+                          <button class="btn btn-primary addFood" type="button" data-name='{{name}}'
+                            data-price='{{price}}'>+</button>
+                        </div>
                     </div>
+                    </template>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- //MENU  -->
         </div>
-        <!-- //RESTAURANT PARTS  -->
+        <!-- //MENU  -->
+      </div>
+      <!-- //RESTAURANT PARTS  -->
 
-        <!-- BASKET  -->
-        <div id="basket" class="col-sm">
-          <div class="card sticky-top">
-            <section class="container content-section">
-              <h2 class="section-header">Cart</h2>
-              <div class="cart-row">
-                <span class="cart-item cart-header cart-column">ITEM</span>
-                <span class="cart-price cart-header cart-column">PRICE</span>
+      <!-- BASKET  -->
+      <div id="basket" class="col-sm">
+        <div class="card sticky-top">
+          <section class="container content-section">
+            <h2 class="section-header">Cart</h2>
+            <div class="row">
+              <div class="col-3">
+                <h3>Item</h3>
+              </div>
+              <div class="col-3">
+                <h3>Price</h3>
+              </div>
+              <div class="col-3">
+                <h3>Quantity</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <span>pizza</span>
+              </div>
+              <div class="col-3">
+                <span>$12</span>
+              </div>
+              <div class="col-3">
+                <span>3</span><button class="btn btn-danger" type="button">REMOVE</button>
+              </div>
+            </div>
+            <!-- <span class="col-8 cart-item cart-header cart-column">ITEM</span>
+                <div class="cart-item cart-column">
+                  <span class="cart-item-title">hello</span>
+                </div>
+                <span class="col-4 cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-price cart-column">$12</span>
                 <span class="cart-quantity cart-header cart-column">QUANTITY</span>
-              </div>
-              <div class="cart-items">
-              </div>
-              <div class="row cart-total">
-                <strong class="col-8 cart-total-title">Total</strong>
-                <span class="col-4 cart-total-price">£0</span>
-              </div>
-              <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
-            </section>
-          </div>
+                <input class="cart-quantity-input" type="number" value="1">
+                <button class="btn btn-danger" type="button">REMOVE</button> -->
+            <div class="cart-items">
+            </div>
+            <div class="row cart-total">
+              <strong class="col-8 cart-total-title">Total</strong>
+              <span class="col-4 cart-total-price">£0</span>
+            </div>
+            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+          </section>
         </div>
-        <!-- //BASKET  -->
       </div>
+      <!-- //BASKET  -->
     </div>
-    <!-- //RESTAURANT  -->
+  </div>
+  <!-- //RESTAURANT  -->
 
-    <!-- FOOTER  -->
-    <footer class="text-center">
-      <a href="#home" class="w3-button w3-black">To the top</a>
-      <div class="w3-xlarge w3-section">
-        <a href="https://github.com/LeoRoma"> <i class="fa fa-github w3-hover-opacity"></i></a>
-        <a href="https://www.linkedin.com/in/jiatian-leo-xia-9b2490191/"> <i
-            class="fa fa-linkedin w3-hover-opacity"></i></a>
-      </div>
-    </footer>
-    <!-- //FOOTER -->
-    <button id='btn' data-shop-listing='{"name": "Buoy", "description": "A buoy", "price": 5.50}'>Add to cart</button>
+  <!-- FOOTER  -->
+  <footer class="text-center">
+    <a href="#home" class="w3-button w3-black">To the top</a>
+    <div class="w3-xlarge w3-section">
+      <a href="https://github.com/LeoRoma"> <i class="fa fa-github w3-hover-opacity"></i></a>
+      <a href="https://www.linkedin.com/in/jiatian-leo-xia-9b2490191/"> <i
+          class="fa fa-linkedin w3-hover-opacity"></i></a>
+    </div>
+  </footer>
+  <!-- //FOOTER -->
 </body>
 
 </html>
