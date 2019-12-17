@@ -224,23 +224,49 @@ $(document).ready(function () {
     })
 
     // adding item 
+    var foodItems = [];
 
     function addFood(dish) {
         $foodCart.append(Mustache.render(cartTemplate, dish));
     }
+    var total = 0;
     $('.addFood').click(function (i) {
-        var dish = $(this).data(name[i])
+        
+        var dish = $(this).data(name[i]);
+        var dishName = dish.name;
+        var dishPrice = dish.price
+        console.log(typeof dishPrice)
+        foodItems.forEach(food => {
+            if(food === dishName){
+                alert("Item already added!")
+                foodCart(this).closest("li").remove();
+                return
+            }
+        })
+        
+        foodItems.push(dish.name)
         addFood(dish)
-
-    })
-
-    $foodCart.delegate('.removeFood', 'click', function () {
-        console.log('hello')
-        $(this).closest("li").remove();
+        total = total + dishPrice;
+        
+        updateQuantity(dish)
     });
 
-    // $(".deleteMe").on("click", function () {
-    //     $(this).closest("li").remove();
-    // });
+    
+
+    function updateQuantity(dish){
+        var quantity = 0;
+        quantity += 1;
+        total = Math.round(total * 100) / 100
+        $('.basketQty').text(`${quantity}`);
+        // $('.cart-total-price').append(`${total}`);
+        console.log(quantity)
+        console.log(total)
+        $('.cart-total-price').text(`${total}`);
+    }
+
+    // remove item 
+    $foodCart.delegate('.removeFood', 'click', function () {
+        $(this).closest("li").remove();
+    });
 })
 

@@ -234,7 +234,7 @@
           <div class="card sticky-top">
             <section class="container content-section">
               <h2 class="section-header">Cart</h2>
-              <ul id="foodCart">
+              <ul class="foodCart" id="foodCart">
                 <template id="cartTemplate">
                   <li class="basket">
                     <span class="basketName">{{name}}</span>
@@ -246,7 +246,7 @@
               </ul>
               <div class="row cart-total">
                 <strong class="col-8 cart-total-title">Total</strong>
-                <span class="col-4 cart-total-price">£0</span>
+                <span class="col-4 cart-total-price">£</span>
               </div>
               <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
             </section>
@@ -267,13 +267,6 @@
       </div>
     </footer>
     <!-- //FOOTER -->
-
-    <ul>
-        <li>item one <div class='deleteMe'>X</div></li>
-        <li>item two <div class='deleteMe'>X</div></li>
-        <li>item three <button class="btn btn-danger removeFood" type="button">-</button></li>
-        ....
-    </ul>
 </body>
 
 </html>
