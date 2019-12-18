@@ -46,8 +46,28 @@ li {
   border-style: none;
 }
 
-/* .category {
-  border-style: outset;
-  border-width: thin;
-  border-color: black;
-} */
+html {
+  font-family: "Helvetica Neue", sans-serif;
+  width: 100%;
+  color: #666666;
+  text-align: center;
+}
+
+
+.popup-overlay.active {
+  /*displays pop-up when "active" class is present*/
+  visibility: visible;
+  text-align: center;
+}
+
+.popup-content {
+  /*Hides pop-up content when there is no "active" class */
+  visibility: hidden;
+}
+
+.popup-content.active {
+  /*Shows pop-up content when "active" class is present */
+  visibility: visible;
+}
+
+

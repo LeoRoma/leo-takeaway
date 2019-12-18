@@ -269,7 +269,20 @@
             <!-- <span class="basketQty"></span> -->
             <span class="col-6 cart-total-price">£</span>
           </div>
-          <button class="btn btn-primary purchase" type="button">PURCHASE</button>
+          <section>
+            <button class="btn btn-outline-primary purchase" type="button">PURCHASE</button>
+            <div class="popup-overlay">
+              <!--Creates the popup content-->
+              <div class="card popup-content">
+                <h2>Checkout</h2>
+                <p> Your total amount to pay is <span class="cart-total-price">£</span></p>
+                <form>
+                  Amount to pay:<br>
+                  <input type="text" name="amount">
+                  <button class="btn btn-outline-primary submit" type="button">Submit</button>
+                </form>
+              </div>
+            </div>
           </section>
         </div>
       </div>
@@ -277,6 +290,8 @@
     </div>
   </div>
   <!-- //RESTAURANT  -->
+
+
 
   <!-- FOOTER  -->
   <footer class="text-center">
@@ -288,5 +303,7 @@
     </div>
   </footer>
   <!-- //FOOTER -->
+
+</body>
 
 </html>

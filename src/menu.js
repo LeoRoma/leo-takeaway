@@ -140,7 +140,7 @@ var menu = {
     "drinks": [
         {
             "name": "Sparkling Water",
-            "price": 1.50,
+            "price": 1.55,
             "quantity": 1
         },
         {
@@ -150,34 +150,34 @@ var menu = {
         },
         {
             "name": "Coca Cola",
-            "price": 2.50,
+            "price": 2.55,
             "quantity": 1
         },
         {
             "name": "Fanta",
-            "price": 2.50,
+            "price": 2.55,
             "quantity": 1
         },
         {
             "name": "Sprite",
-            "price": 2.50,
+            "price": 2.55,
             "quantity": 1
         }
     ],
     "alcoholics": [
         {
             "name": "Peroni",
-            "price": 3.50,
+            "price": 3.55,
             "quantity": 1
         },
         {
             "name": "Red Wine",
-            "price": 5.50,
+            "price": 5.55,
             "quantity": 1
         },
         {
             "name": "White Wine",
-            "price": 4.50,
+            "price": 4.55,
             "quantity": 1
         }
     ]
@@ -316,10 +316,10 @@ $(document).ready(function () {
         //     updateQuantity(dish);
         // }
         // if (quantity === 0) {
-            $(this).closest("div.basket").remove();
-            total -= dishPrice;
-            foodItems.pop()
-            updateQuantity(dish)
+        $(this).closest("div.basket").remove();
+        total -= dishPrice;
+        foodItems.pop()
+        updateQuantity(dish)
         // }
     });
 
@@ -327,31 +327,33 @@ $(document).ready(function () {
     $('.purchase').click(function () {
         if (total === 0) {
             alert('You can not checkout without purchasing an item.')
+        } else {
+            $(".popup-overlay, .popup-content").addClass("active");
+            // alert(`Thank you for your purchase of a total of £${total}`)
         }
     })
+    $(".submit").submit(function (event) {
+        if ($("input").first().val() === `${total}`) {
+            // $( "span" ).text( "Validated..." ).show();
+            alert("thank you for your purchase")
+            return
+        } else {
+            event.preventDefault;
 
-    var incrementPlus;
-    var incrementMinus;
-
-    var buttonPlus = $(".cart-qty-plus");
-    var buttonMinus = $(".cart-qty-minus");
-
-    var incrementPlus = buttonPlus.click(function () {
-        var $n = $(this)
-            .parent(".button-container")
-            .parent(".container")
-            .find(".qty");
-        $n.val(Number($n.val()) + 1);
-    });
-
-    var incrementMinus = buttonMinus.click(function () {
-        var $n = $(this)
-            .parent(".button-container")
-            .parent(".container")
-            .find(".qty");
-        var amount = Number($n.val());
-        if (amount > 0) {
-            $n.val(amount - 1);
+            alert('Please insert correct amount')
+            return
         }
+
+    });
+    $(".submit").click(function (event) {
+        if ($("input").first().val() === `${total}`) {
+            // $( "span" ).text( "Validated..." ).show();
+            alert("Thank you for your purchase")
+            location.reload(true);
+            return
+        }
+        event.preventDefault;
+        alert('Please insert correct amount')
+
     });
 }) 
