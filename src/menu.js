@@ -209,6 +209,45 @@ $(document).ready(function () {
 
     var cartTemplate = $('#cartTemplate').html();
 
+    // trying refactoring
+    // function iteration(foods) {
+    //     console.log(foods)
+    //     foods.forEach(food => {
+    //         getFood(food);
+    //     })
+    // }
+    // function getFood(food) {
+    //     $showStarters.append(Mustache.render(startersTemplate, food));
+    // };
+
+    // function getFood(food) {
+    //     $showPizzas.append(Mustache.render(pizzasTemplate, food));
+    // };
+
+    // function getFood(food) {
+    //     $showSides.append(Mustache.render(sidesTemplate, food));
+    // };
+
+    // function getFood(food) {
+    //     $showDesserts.append(Mustache.render(dessertsTemplate, food));
+    // };
+
+    // function getFood(food) {
+    //     $showDrinks.append(Mustache.render(drinksTemplate, food));
+    // };
+
+    // function getFood(food) {
+    //     $showAlcoholics.append(Mustache.render(alcoholicsTemplate, food));
+    // };
+
+    // iteration(starters);
+    // iteration(pizzas);
+    // iteration(sides);
+    // iteration(desserts);
+    // iteration(drinks);
+    // iteration(alcoholics)
+    // trying refactoring
+
     function getStarters(starter) {
         $showStarters.append(Mustache.render(startersTemplate, starter))
     };
@@ -328,7 +367,7 @@ $(document).ready(function () {
             // alert(`Thank you for your purchase of a total of £${total}`)
         }
     })
- 
+
     $(".submit").click(function (event) {
         if ($("input").first().val() === `${total}`) {
             // $( "span" ).text( "Validated..." ).show();
