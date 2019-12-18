@@ -1,7 +1,6 @@
-
-
 h3 {
-  color: blue;
+  font-weight: bold;
+  color: black;
 }
 
 .navbar {
@@ -23,12 +22,15 @@ img {
   padding: 10px;
 }
 
-.menuCategories {
-  float: right;
+.fixed {
+  margin-left: 400px;
+  /* float: right; */
 }
 
-.restaurantOverview{
+.restaurantOverview {
   height: 150px;
+  margin-top: -75px;
+  position: relative;
 }
 
 ul {
@@ -36,8 +38,8 @@ ul {
 }
 
 li {
-  font-size: 25px;
-  color: grey
+  font-size: 20px;
+  color: black;
 }
 
 .sticky-top {
