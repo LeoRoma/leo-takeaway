@@ -21,10 +21,10 @@
 <body>
   <div id="container">
     <!-- HEADER  -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <nav class="navbar navbar-expand-lg static-top">
       <div class="container">
         <a class="navbar-brand" href="#">
-          <img src="http://placehold.it/150x50?text=Logo" alt="">
+          LeoTakeaway
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
           aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,10 +43,9 @@
 
     <!-- BANNER -->
     <div class="jumbotron jumbotron-fluid">
-
-      <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&w=1000&q=80" width="100%"
-        height="400">
-
+      <div class="image">
+        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&w=1000&q=80" width="80%" height="400">
+      </div>
     </div>
     <!-- //BANNER  -->
 
@@ -88,17 +87,18 @@
         <div id="restaurantParts" class="col-sm scrollit">
           <div class="panel panel-default">
             <!-- RESTAURANT DETAILS  -->
-            <div class="restaurantOverview o-card u-negativeSpace--top">
+            <div class="restaurantOverview card u-negativeSpace--top">
               <div class="details">
                 <h1 class="name" itemprop="name">Leo Takeaway - Barons Court</h1>
                 <p class="address">175 Greyhound rd, W6 8NL</p>
+                <h1>Menu</h1>
               </div>
             </div>
             <!-- //RESTAURANT DETAILS  -->
 
             <!-- MENU  -->
             <div id="menu" class="o-card">
-              <div id="cat0" class="category">
+              <div id="cat0" class="card category">
                 <h3 class="categoryNAme"><a name="cat0"></a>Starters</h3>
                 <div class="products">
                   <div class="productWithSynonims">
@@ -107,11 +107,11 @@
                         <div class="col-7">
                           <span class="shop-item-title">{{name}}{{i}}</span>
                         </div>
-                        <div class="col-4 orderDetails" id="showPrice">
+                        <div class="col-3 orderDetails" id="showPrice">
                           <span class="shop-item-price">{{price}}</span>
                         </div>
-                        <div class="col-1">
-                          <button class="btn btn-primary addFood" type="button" data-name='{{name}}'
+                        <div class="col-2">
+                          <button class="btn btn-outline-primary addFood" type="button" data-name='{{name}}'
                             data-price='{{price}}' data-quantity="{{quantity}}">+</button>
                         </div>
                       </template>
@@ -119,7 +119,7 @@
                   </div>
                 </div>
               </div>
-              <div id="cat1" class="category">
+              <div id="cat1" class="card category">
                 <h3 class="categoryNAme">Pizzas</h3>
                 <div class="products">
                   <div class="productWithSynonims">
@@ -128,11 +128,11 @@
                         <div class="col-7">
                           <span class="shop-item-title">{{name}}</span>
                         </div>
-                        <div class="col-4 orderDetails" id="showPrice">
+                        <div class="col-3 orderDetails" id="showPrice">
                           <span class="shop-item-price">{{price}}</span>
                         </div>
-                        <div class="col-1">
-                          <button class="btn btn-primary addFood" type="button" data-name='{{name}}'
+                        <div class="col-2">
+                          <button class="btn btn-outline-primary addFood" type="button" data-name='{{name}}'
                             data-price='{{price}}' data-quantity="{{quantity}}">+</button>
                         </div>
                       </template>
@@ -140,7 +140,7 @@
                   </div>
                 </div>
               </div>
-              <div id="cat2" class="category">
+              <div id="cat2" class="card category">
                 <h3 class="categoryNAme">Sides</h3>
                 <div class="products">
                   <div class="row information" id="showSides">
@@ -148,18 +148,18 @@
                       <div class="col-7">
                         <span class="shop-item-title">{{name}}</span>
                       </div>
-                      <div class="col-4 orderDetails" id="showPrice">
+                      <div class="col-3 orderDetails" id="showPrice">
                         <span class="shop-item-price">{{price}}</span>
                       </div>
-                      <div class="col-1">
-                        <button class="btn btn-primary addFood" type="button" data-name='{{name}}'
+                      <div class="col-2">
+                        <button class="btn btn-outline-primary addFood" type="button" data-name='{{name}}'
                           data-price='{{price}}' data-quantity="{{quantity}}">+</button>
                       </div>
                     </template>
                   </div>
                 </div>
               </div>
-              <div id="cat3" class="category">
+              <div id="cat3" class="card category">
                 <h3 class="categoryNAme">Desserts</h3>
                 <div class="products">
                   <div class="productWithSynonims">
@@ -168,11 +168,11 @@
                         <div class="col-7">
                           <span class="shop-item-title">{{name}}</span>
                         </div>
-                        <div class="col-4 orderDetails" id="showPrice">
+                        <div class="col-3 orderDetails" id="showPrice">
                           <span class="shop-item-price">{{price}}</span>
                         </div>
-                        <div class="col-1">
-                          <button class="btn btn-primary addFood" type="button" data-name='{{name}}'
+                        <div class="col-2">
+                          <button class="btn btn-outline-primary addFood" type="button" data-name='{{name}}'
                             data-price='{{price}}' data-quantity="{{quantity}}">+</button>
                         </div>
                       </template>
@@ -180,7 +180,7 @@
                   </div>
                 </div>
               </div>
-              <div id="cat4" class="category">
+              <div id="cat4" class="card category">
                 <h3 class="categoryNAme">Drinks</h3>
                 <div class="products">
                   <div class="productWithSynonims">
@@ -189,11 +189,11 @@
                         <div class="col-7">
                           <span class="shop-item-title">{{name}}</span>
                         </div>
-                        <div class="col-4 orderDetails" id="showPrice">
+                        <div class="col-3 orderDetails" id="showPrice">
                           <span class="shop-item-price">{{price}}</span>
                         </div>
-                        <div class="col-1">
-                          <button class="btn btn-primary addFood" type="button" data-name='{{name}}'
+                        <div class="col-2">
+                          <button class="btn btn-outline-primary addFood" type="button" data-name='{{name}}'
                             data-price='{{price}}' data-quantity="{{quantity}}">+</button>
                         </div>
                       </template>
@@ -201,7 +201,7 @@
                   </div>
                 </div>
               </div>
-              <div id="cat5" class="category">
+              <div id="cat5" class="card category">
                 <h3 class="categoryNAme"><a name="cat5"></a>Alcoholic drinks</h3>
                 <div class="products">
                   <div class="productWithSynonims">
@@ -210,11 +210,11 @@
                         <div class="col-7">
                           <span class="shop-item-title">{{name}}</span>
                         </div>
-                        <div class="col-4 orderDetails" id="showPrice">
+                        <div class="col-3 orderDetails" id="showPrice">
                           <span class="shop-item-price">{{price}}</span>
                         </div>
-                        <div class="col-1">
-                          <button class="btn btn-primary addFood" type="button" data-name="{{name}}"
+                        <div class="col-2">
+                          <button class="btn btn-outline-primary addFood" type="button" data-name="{{name}}"
                             data-price="{{price}}" data-quantity="{{quantity}}">+</button>
                         </div>
                       </template>
@@ -239,12 +239,12 @@
                     <div class="col-6">
                       <span class="basketName">{{name}}</span>
                     </div>
-                    <div class="col-4">
+                    <div class="col-3">
                       <span class="basketPrice" id="quantity" value="1">£{{price}}</span>
                     </div>
                     <!-- <input type="text" name="qty" class="qty" maxlength="12" value="0" class="input-text qty" /> -->
-                    <div class="col -2 buttonBasket">
-                      <button class="btn btn-danger removeFood" type="button" data-name='{{name}}'
+                    <div class="col-2 buttonBasket">
+                      <button class="btn btn-outline-danger removeFood" type="button" data-name='{{name}}'
                         data-price='{{price}}' type="button">-</button>
                     </div>
                   </div>
@@ -254,7 +254,7 @@
           <div class="row cart-total">
             <strong class="col-8 cart-total-title">Total</strong>
             <!-- <span class="basketQty"></span> -->
-            <span class="col-4 cart-total-price">£</span>
+            <span class="col-3 cart-total-price">£</span>
           </div>
           <button class="btn btn-primary purchase" type="button">PURCHASE</button>
           </section>

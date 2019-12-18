@@ -1,22 +1,51 @@
-.jumbotron {
-  width: 100%;
-}
 
-ul {
-  padding: 20px;
-}
 
 h3 {
   color: blue;
 }
 
-.basketName {
-  display: flex;
-  align-items: flex-start;
+.navbar {
+  background-color: red;
+  height: 80px;
 }
 
-.basketPrice {
-  /* float: center; */
-  display: flex;
-  align-items: center;
+.jumbotron {
+  background-color: white;
+  height: 430px;
 }
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#restaurant {
+  padding: 10px;
+}
+
+.menuCategories {
+  float: right;
+}
+
+.restaurantOverview{
+  height: 150px;
+}
+
+ul {
+  line-height: 400%;
+}
+
+li {
+  font-size: 25px;
+  color: grey
+}
+
+.sticky-top {
+  border-style: none;
+}
+
+/* .category {
+  border-style: outset;
+  border-width: thin;
+  border-color: black;
+} */
