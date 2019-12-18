@@ -2,149 +2,183 @@ var menu = {
     "starters": [
         {
             "name": "Arancini",
-            "price": 1.50
+            "price": 1.50,
+            "quantity": 1
         },
         {
             "name": "Bruschetta",
-            "price": 2.50
+            "price": 2.50,
+            "quantity": 1
         },
         {
             "name": "Fritto misto",
-            "price": 10.50
+            "price": 10.50,
+            "quantity": 1
         },
         {
             "name": "Crocchette",
-            "price": 4.50
+            "price": 4.50,
+            "quantity": 1
         },
         {
             "name": "Fiori di Zucca",
-            "price": 3.50
+            "price": 3.50,
+            "quantity": 1
         }
     ],
     "pizzas": [
         {
             "name": "Marinara",
-            "price": 8.00
+            "price": 8.00,
+            "quantity": 1
         },
         {
             "name": "Margherita",
-            "price": 9.00
+            "price": 9.00,
+            "quantity": 1
         },
         {
             "name": "4 Stagioni",
-            "price": 12.00
+            "price": 12.00,
+            "quantity": 1
         },
         {
             "name": "Capricciosa",
-            "price": 13.00
+            "price": 13.00,
+            "quantity": 1
         },
         {
             "name": "Boscaiola",
-            "price": 11.00
+            "price": 11.00,
+            "quantity": 1
         },
         {
             "name": "Diavola",
-            "price": 11.00
+            "price": 11.00,
+            "quantity": 1
         },
         {
             "name": "Rugola",
-            "price": 10.00
+            "price": 10.00,
+            "quantity": 1
         },
         {
             "name": "Parma",
-            "price": 11.00
+            "price": 11.00,
+            "quantity": 1
         },
         {
             "name": "Bufala",
-            "price": 11.50
+            "price": 11.50,
+            "quantity": 1
         },
         {
             "name": "4 Formaggi",
-            "price": 10.50
+            "price": 10.50,
+            "quantity": 1
         },
         {
             "name": "Patate",
-            "price": 9.50
+            "price": 9.50,
+            "quantity": 1
         },
         {
             "name": "Margherita",
-            "price": 9.00
+            "price": 9.00,
+            "quantity": 1
         }
     ],
     "sides": [
         {
             "name": "Insalata",
-            "price": 3.50
+            "price": 3.50,
+            "quantity": 1
         },
         {
             "name": "Olive all' Ascolana",
-            "price": 2.50
+            "price": 2.50,
+            "quantity": 1
         },
         {
             "name": "Friarelli",
-            "price": 2.50
+            "price": 2.50,
+            "quantity": 1
         },
         {
             "name": "Verdure Miste",
-            "price": 6.50
+            "price": 6.50,
+            "quantity": 1
         },
         {
             "name": "Patate",
-            "price": 3.50
+            "price": 3.50,
+            "quantity": 1
         }
     ],
     "desserts": [
         {
             "name": "Tiramisu",
-            "price": 3.50
+            "price": 3.50,
+            "quantity": 1
         },
         {
             "name": "Chocolate Cheesecake",
-            "price": 2.50
+            "price": 2.50,
+            "quantity": 1
         },
         {
             "name": "Vanilla Icecream",
-            "price": 1.50
+            "price": 1.50,
+            "quantity": 1
         },
         {
             "name": "Frutta Mista",
-            "price": 4.50
+            "price": 4.50,
+            "quantity": 1
         }
     ],
     "drinks": [
         {
             "name": "Sparkling Water",
-            "price": 1.50
+            "price": 1.50,
+            "quantity": 1
         },
         {
             "name": "Still Water",
-            "price": 1.00
+            "price": 1.00,
+            "quantity": 1
         },
         {
             "name": "Coca Cola",
-            "price": 2.50
+            "price": 2.50,
+            "quantity": 1
         },
         {
             "name": "Fanta",
-            "price": 2.50
+            "price": 2.50,
+            "quantity": 1
         },
         {
             "name": "Sprite",
-            "price": 2.50
+            "price": 2.50,
+            "quantity": 1
         }
     ],
     "alcoholics": [
         {
             "name": "Peroni",
-            "price": 3.50
+            "price": 3.50,
+            "quantity": 1
         },
         {
             "name": "Red Wine",
-            "price": 5.50
+            "price": 5.50,
+            "quantity": 1
         },
         {
             "name": "White Wine",
-            "price": 4.50
+            "price": 4.50,
+            "quantity": 1
         }
     ]
 }
@@ -234,9 +268,12 @@ $(document).ready(function () {
     }
 
     $('.addFood').click(function (i) {
-        var dish = $(this).data(name[i]);
-        var dishName = dish.name;
-        var dishPrice = dish.price
+        let dish = $(this).data(name[i]);
+        console.log(dish)
+        let dishName = dish.name;
+        let dishPrice = dish.price
+        let quantity = dish.quantity
+        console.log(quantity)
         foodItems.forEach(food => {
             if (food === dishName) {
                 alert("Item already added!")
@@ -251,16 +288,14 @@ $(document).ready(function () {
         updateQuantity(dish)
     });
 
-    $foodCart.delegate('.addFood', 'click', function (i) {
-        let dish = $(this).data(name[i]);
-        let dishPrice = dish.price
-        let quantity = $(".addFood").val();
-        let qty = Number(quantity);
-        qty += 1;
-        // console.log(qty)
 
-        total += dishPrice
-        updateQuantity(dish);
+    $foodCart.delegate('.addFood', 'click', function () {
+        // let dish = $(this).data(name[i]);
+        // let dishPrice = dish.price
+        // total += dishPrice
+        // updateQuantity(dish);
+        var $n = $(this).find(".qty");
+        $n.val(Number($n.val()) + 1);
     });
 
     function updateQuantity(dish) {
@@ -273,19 +308,19 @@ $(document).ready(function () {
     $foodCart.delegate('.removeFood', 'click', function (i) {
         let dish = $(this).data(name[i]);
         let dishPrice = dish.price
-        let quantity = $(".removeFood").val();
-        let qty = Number(quantity);
-        if (qty > 0) {
-            qty -= 1;
-            // console.log(qty)
+        // console.log(quantity)
+        // if (quantity > 0) {
+        //     quantity -= 1;
+
+        //     total -= dishPrice;
+        //     updateQuantity(dish);
+        // }
+        // if (quantity === 0) {
+            $(this).closest("div.basket").remove();
             total -= dishPrice;
-            updateQuantity(dish);
-        }
-        if (qty === 0) {
-            $(this).closest("li").remove();
             foodItems.pop()
             updateQuantity(dish)
-        }
+        // }
     });
 
     // purchase 
@@ -294,4 +329,29 @@ $(document).ready(function () {
             alert('You can not checkout without purchasing an item.')
         }
     })
+
+    var incrementPlus;
+    var incrementMinus;
+
+    var buttonPlus = $(".cart-qty-plus");
+    var buttonMinus = $(".cart-qty-minus");
+
+    var incrementPlus = buttonPlus.click(function () {
+        var $n = $(this)
+            .parent(".button-container")
+            .parent(".container")
+            .find(".qty");
+        $n.val(Number($n.val()) + 1);
+    });
+
+    var incrementMinus = buttonMinus.click(function () {
+        var $n = $(this)
+            .parent(".button-container")
+            .parent(".container")
+            .find(".qty");
+        var amount = Number($n.val());
+        if (amount > 0) {
+            $n.val(amount - 1);
+        }
+    });
 }) 
