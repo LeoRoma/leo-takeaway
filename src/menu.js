@@ -272,8 +272,6 @@ $(document).ready(function () {
         console.log(dish)
         let dishName = dish.name;
         let dishPrice = dish.price
-        let quantity = dish.quantity
-        console.log(quantity)
         foodItems.forEach(food => {
             if (food === dishName) {
                 alert("Item already added!")
@@ -294,8 +292,6 @@ $(document).ready(function () {
         // let dishPrice = dish.price
         // total += dishPrice
         // updateQuantity(dish);
-        var $n = $(this).find(".qty");
-        $n.val(Number($n.val()) + 1);
     });
 
     function updateQuantity(dish) {
@@ -332,19 +328,7 @@ $(document).ready(function () {
             // alert(`Thank you for your purchase of a total of £${total}`)
         }
     })
-    $(".submit").submit(function (event) {
-        if ($("input").first().val() === `${total}`) {
-            // $( "span" ).text( "Validated..." ).show();
-            alert("thank you for your purchase")
-            return
-        } else {
-            event.preventDefault;
-
-            alert('Please insert correct amount')
-            return
-        }
-
-    });
+ 
     $(".submit").click(function (event) {
         if ($("input").first().val() === `${total}`) {
             // $( "span" ).text( "Validated..." ).show();
