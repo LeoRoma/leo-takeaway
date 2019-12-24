@@ -327,6 +327,11 @@ $(document).ready(function () {
 
 
     $foodCart.delegate('.addFood', 'click', function () {
+
+        
+            var el = parseInt($('.likes').text());
+            $('.likes').text(el + 1);
+      
         // let dish = $(this).data(name[i]);
         // let dishPrice = dish.price
         // total += dishPrice
