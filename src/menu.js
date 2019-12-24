@@ -326,16 +326,16 @@ $(document).ready(function () {
     });
 
 
-    $foodCart.delegate('.addFood', 'click', function () {
+    $foodCart.delegate('.addFood', 'click', function (i) {
+        let dish = $(this).data(name[i]);
+        var el = parseInt($('.qty-per-item').text());
+        console.log(el)
+        $('.qty-per-item').text(el + 1);
 
-        
-            var el = parseInt($('.likes').text());
-            $('.likes').text(el + 1);
-      
         // let dish = $(this).data(name[i]);
-        // let dishPrice = dish.price
-        // total += dishPrice
-        // updateQuantity(dish);
+        let dishPrice = dish.price
+        total += dishPrice
+        updateQuantity(dish);
     });
 
     function updateQuantity(dish) {
