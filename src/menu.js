@@ -308,35 +308,34 @@ $(document).ready(function () {
 
     $('.addFood').click(function (i) {
         let dish = $(this).data(name[i]);
-        console.log(dish)
         let dishName = dish.name;
-        let dishPrice = dish.price
+        let dishPrice = dish.price;
         foodItems.forEach(food => {
             if (food === dishName) {
                 alert("Item already added!")
                 foodCart(this).closest("li").remove();
-                return
+                return;
             }
         })
-        foodItems.push(dish.name)
-        addFood(dish)
+        foodItems.push(dish.name);
+        addFood(dish);
         quantityByItem += 1;
         total += dishPrice;
-        updateQuantity(dish)
-    });
-
-
-    $foodCart.delegate('.addFood', 'click', function (i) {
-        let dish = $(this).data(name[i]);
-        var el = parseInt($('.qty-per-item').text());
-        console.log(el)
-        $('.qty-per-item').text(el + 1);
-
-        // let dish = $(this).data(name[i]);
-        let dishPrice = dish.price
-        total += dishPrice
         updateQuantity(dish);
     });
+
+
+    // $foodCart.delegate('.addFood', 'click', function (i) {
+    //     let dish = $(this).data(name[i]);
+    //     var el = parseInt($('.qty-per-item').text());
+    //     console.log(el)
+    //     $('.qty-per-item').text(el + 1);
+
+    //     // let dish = $(this).data(name[i]);
+    //     let dishPrice = dish.price
+    //     total += dishPrice
+    //     updateQuantity(dish);
+    // });
 
     function updateQuantity(dish) {
         total = Math.round(total * 100) / 100
@@ -375,7 +374,6 @@ $(document).ready(function () {
 
     $(".submit").click(function (event) {
         if ($("#amount").first().val() === `${total}`) {
-            // $( "span" ).text( "Validated..." ).show();
             alert("Thank you for your purchase")
             location.reload(true);
             return
@@ -384,4 +382,32 @@ $(document).ready(function () {
         alert('Please insert correct amount')
 
     });
+
+    // test 
+
+    // $('.basket').on('click', '.qty-per-item', function() {
+    //     var $el = $(this);
+    //     var count = $el.data('count') || 1;    
+    //     $el.find('span').html(count);
+    //     $el.data('count', ++count);
+    // });
+
+    $foodCart.delegate('.addFood', 'click', '.qty-per-item', function (i) {
+        console.log('hello');
+        var $el = $(this);
+        var count = $el.data('count') || 1; 
+        $el.find('span').html(count);
+        $el.data('count', ++count);
+        console.log(count)
+        // let dish = $(this).data(name[i]);
+        // var el = parseInt($('.qty-per-item').text());
+        // console.log(el)
+        // $('.qty-per-item').text(el + 1);
+
+        // // let dish = $(this).data(name[i]);
+        // let dishPrice = dish.price
+        // total += dishPrice
+        // updateQuantity(dish);
+    });
+    
 }) 
