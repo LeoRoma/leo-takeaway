@@ -250,10 +250,10 @@
                 <template id="cartTemplate">
                   <div class="row basket">
                     <div class="col-6">
-                      <span class="basketName">{{name}}</span>
+                      <span class="basketName" id="basketName">{{name}}</span>
                     </div>
                     <div class="col-4">
-                      <span class="basketPrice" id="quantity" value="1">£{{price}}</span>
+                      <span class="basketPrice" id="basketPrice">£{{price}}</span>
                       <div class="qty-per-item">1</div>
                     </div>
                     <!-- <input type="text" name="qty" class="qty" maxlength="12" value="0" class="input-text qty" /> -->
@@ -281,7 +281,7 @@
                 <p> Your total amount to pay is <span class="cart-total-price">£</span></p>
                 <form>
                   Amount to pay:<br>
-                  <input type="text" name="amount">
+                  <input type="text" id="amount" name="amount">
                   <button class="btn btn-outline-primary submit" type="button">Submit</button>
                 </form>
               </div>

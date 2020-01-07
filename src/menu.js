@@ -369,13 +369,12 @@ $(document).ready(function () {
             alert('You can not checkout without purchasing an item.')
         } else {
             $(".popup-overlay, .popup-content").addClass("active");
-            $("#foodCart").clone().appendTo("#checkout");
-            // alert(`Thank you for your purchase of a total of £${total}`)
+            // $("#foodCart").clone().appendTo("#checkout");
         }
     })
 
     $(".submit").click(function (event) {
-        if ($("input").first().val() === `${total}`) {
+        if ($("#amount").first().val() === `${total}`) {
             // $( "span" ).text( "Validated..." ).show();
             alert("Thank you for your purchase")
             location.reload(true);
