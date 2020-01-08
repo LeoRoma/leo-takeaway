@@ -22,4 +22,4 @@ This project is a mockup of Just Eat and is a Single Page App.
 
 ![Image screenshot](./screenshots/leotakeaway.png)
 -------
-![Image screenshot](/takeawaypurchase.png)
+![Image screenshot](./screenshots/takeawaypurchase.png)
