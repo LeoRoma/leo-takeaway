@@ -17,3 +17,8 @@ This project is a mockup of Just Eat and is a Single Page App.
 - Run `npm install` to install the dependencies.
 - Open the project in your text-editor.
 - Copy the full path from `index.html` in your browser.
+
+# Screenshots
+
+![Image screenshot](/leotakeaway.png)
+![Image screenshot](/takeawaypurchase.png)
