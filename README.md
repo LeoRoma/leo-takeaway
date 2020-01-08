@@ -19,7 +19,7 @@ This project is a mockup of Just Eat and is a Single Page App.
 - Copy the full path from `index.html` in your browser.
 
 # Screenshots
-
-- ![Image screenshot](./screenshots/leotakeaway.png)
-
-- ![Image screenshot](./screenshots/takeawaypurchase.png)
+- Whole page:
+![Image screenshot](./screenshots/leotakeaway.png)
+- After purchase:
+![Image screenshot](./screenshots/takeawaypurchase.png)
