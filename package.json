@@ -4,6 +4,7 @@
   "description": "",
   "main": "menu.js",
   "dependencies": {
+    "node": "^13.5.0",
     "requirejs": "^2.3.6"
   },
   "devDependencies": {},

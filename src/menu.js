@@ -396,7 +396,7 @@ $(document).ready(function () {
         console.log('hello');
         var $el = $(this);
         var count = $el.data('count') || 1; 
-        $el.find('span').html(count);
+        $el.find('.qty-per-item').text(count);
         $el.data('count', ++count);
         console.log(count)
         // let dish = $(this).data(name[i]);
