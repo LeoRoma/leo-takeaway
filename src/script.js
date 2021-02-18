@@ -24,44 +24,6 @@ $(document).ready(function () {
 
     var cartTemplate = $('#cartTemplate').html();
 
-    // trying refactoring
-    // function iteration(foods) {
-    //     console.log(foods)
-    //     foods.forEach(food => {
-    //         getFood(food);
-    //     })
-    // }
-    // function getFood(food) {
-    //     $showStarters.append(Mustache.render(startersTemplate, food));
-    // };
-
-    // function getFood(food) {
-    //     $showPizzas.append(Mustache.render(pizzasTemplate, food));
-    // };
-
-    // function getFood(food) {
-    //     $showSides.append(Mustache.render(sidesTemplate, food));
-    // };
-
-    // function getFood(food) {
-    //     $showDesserts.append(Mustache.render(dessertsTemplate, food));
-    // };
-
-    // function getFood(food) {
-    //     $showDrinks.append(Mustache.render(drinksTemplate, food));
-    // };
-
-    // function getFood(food) {
-    //     $showAlcoholics.append(Mustache.render(alcoholicsTemplate, food));
-    // };
-
-    // iteration(starters);
-    // iteration(pizzas);
-    // iteration(sides);
-    // iteration(desserts);
-    // iteration(drinks);
-    // iteration(alcoholics)
-    // trying refactoring
 
     function getStarters(starter) {
         $showStarters.append(Mustache.render(startersTemplate, starter))
@@ -140,18 +102,6 @@ $(document).ready(function () {
     });
 
 
-    // $foodCart.delegate('.addFood', 'click', function (i) {
-    //     let dish = $(this).data(name[i]);
-    //     var el = parseInt($('.qty-per-item').text());
-    //     console.log(el)
-    //     $('.qty-per-item').text(el + 1);
-
-    //     // let dish = $(this).data(name[i]);
-    //     let dishPrice = dish.price
-    //     total += dishPrice
-    //     updateQuantity(dish);
-    // });
-
     function updateQuantity(dish) {
         total = Math.round(total * 100) / 100
         $('.basketQty').text(`${quantityByItem}`);
@@ -160,23 +110,13 @@ $(document).ready(function () {
 
     // remove item 
     $foodCart.delegate('.removeFood', 'click', function (i) {
-        // console.log(i);
         let dish = $(this).data('name');
         let dishPrice = dish.price;
-        console.log(dish)
-        // console.log(quantity)
-        // if (quantity > 0) {
-        //     quantity -= 1
 
-        //     total -= dishPrice;
-        //     updateQuantity(dish);
-        // }
-        // if (quantity === 0) {
         $(this).closest("div.basket").remove();
         total -= dishPrice;
         foodItems.pop()
         updateQuantity(dish)
-        // }
     });
 
     // purchase 
@@ -185,7 +125,6 @@ $(document).ready(function () {
             alert('You can not checkout without purchasing an item.')
         } else {
             $(".popup-overlay, .popup-content").addClass("active");
-            // $("#foodCart").clone().appendTo("#checkout");
         }
     })
 
@@ -200,31 +139,13 @@ $(document).ready(function () {
 
     });
 
-    // test 
 
-    // $('.basket').on('click', '.qty-per-item', function() {
-    //     var $el = $(this);
-    //     var count = $el.data('count') || 1;    
-    //     $el.find('span').html(count);
-    //     $el.data('count', ++count);
-    // });
-
+    // Add Food
     $foodCart.delegate('.addFood', 'click', '.qty-per-item', function (i) {
-        console.log('hello');
         var $el = $(this);
         var count = $el.data('count') || 1; 
         $el.find('.qty-per-item').text(count);
         $el.data('count', ++count);
-        console.log(count)
-        // let dish = $(this).data(name[i]);
-        // var el = parseInt($('.qty-per-item').text());
-        // console.log(el)
-        // $('.qty-per-item').text(el + 1);
-
-        // // let dish = $(this).data(name[i]);
-        // let dishPrice = dish.price
-        // total += dishPrice
-        // updateQuantity(dish);
     });
     
 }) 
